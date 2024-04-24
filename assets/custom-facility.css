@@ -1,0 +1,10 @@
+.facility {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 0;
+  flex-wrap: wrap;
+}
+.facility p {
+  text-align: center;
+  font-size: 2rem;
+}
