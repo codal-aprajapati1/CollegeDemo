@@ -1,0 +1,229 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="...">
+<!-- Bootstrap JS (Popper.js and Bootstrap JS) -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="..."></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="..."></script>
+
+{{ 'custom-footer.css' | asset_url | stylesheet_tag }}
+
+<footer class="main">
+  <div
+    class="footer-container"
+    style="
+                                                                                                                                                                                                                                                                                                                                                                                                                                    background: url('{{ section.settings.img | img_url }}') no-repeat; background-position: center; background-size: cover; width: 100%; max-width: 100vw;
+    "
+  >
+    {% for block in section.blocks %}
+      {% if block.type == 'footer-links' %}
+        <div class="footer-left" id="accordion1">
+          <h2 style="color: white; font-size: 3rem">{{ block.settings.linklist1.title }}</h2>
+          <div>
+            {% for link in block.settings.linklist1.links %}
+              <p>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </p>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.type == 'footer-links2' %}
+        <div class="footer-middle">
+          <h2 style="color: white; font-size: 3rem">{{ block.settings.linklist2.title }}</h2>
+          <div>
+            {% for link in block.settings.linklist2.links %}
+              <p>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </p>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.type == 'footer-links3' %}
+        <div class="footer-right">
+          <h2 style="color: white; font-size: 3rem">{{ block.settings.linklist3.title }}</h2>
+          <div>
+            {% for link in block.settings.linklist3.links %}
+              <p>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </p>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+    {% for block in section.blocks %}
+      {% if block.type == 'sociallinks' %}
+        <div
+          class="icons"
+        >
+          <a href="#"
+            ><span style="line-height: 10px; color: white;">{{ block.settings.svglink1 }}</span></a
+          >
+          <a href="#" style="text-decoration: none"
+            ><span style="line-height: 10px; color: white;">{{ block.settings.svgtext1 }}</span></a
+          >
+          <br>
+          <a href="#" style="text-decoration: none"
+            ><span style="line-height: 10px; color: white;">{{ block.settings.svglink2 }}</span></a
+          >
+          <a href="#" style="text-decoration: none"
+            ><span style="line-height: 10px; color: white;">{{ block.settings.svgtext2 }}</span></a
+          >
+          <br>
+          <a href="#" style="text-decoration: none"
+            ><span style="line-height: 10px; color: white;">{{ block.settings.svglink3 }}</span></a
+          >
+          <a href="#" style="text-decoration: none"
+            ><span style="line-height: 10px; color: white;">{{ block.settings.svgtext3 }}</span></a
+          >
+          <br>
+          <a href="#" style="text-decoration: none"
+            ><span style="line-height: 10px; color: white;">{{ block.settings.svglink4 }}</span></a
+          >
+          <a href="#" style="text-decoration: none"
+            ><span style="line-height: 10px; color: white;">{{ block.settings.svgtext4 }}</span></a
+          >
+          <br>
+          <a href="#" style="text-decoration: none"
+            ><span style="line-height: 10px; color: white;">{{ block.settings.svglink5 }}</span></a
+          >
+          <a href="#" style="text-decoration: none"
+            ><span style="line-height: 10px; color: white;">{{ block.settings.svgtext5 }}</span></a
+          >
+          <br>
+          <br>
+          <div style="color: white">{{ section.settings.t1 }}</div>
+          <input class="in-1" type="text" placeholder="Enter your email">
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="footer2">
+    <span class="s1" style="margin-top: 1%">2024 ©WatchVista. All rights reserved.</span>
+    <img src="https://cdn.shopify.com/s/files/1/0860/9624/9106/files/pay-removebg-preview.png?v=1709570978">
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "New Footer",
+  "tag": "section",
+  "class": "new-footer",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "img",
+      "label": "Select Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "img1",
+      "label": "Select Payment Image"
+    },
+    {
+      "type": "text",
+      "id": "t1",
+      "label": "Input Box text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "New Footer"
+    }
+  ],
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "name": "Footer Links",
+      "type": "footer-links",
+      "settings": [
+        {
+          "type":"link_list",
+          "id": "linklist1",
+          "label": "Footer Menu"
+        }
+      ]
+    },
+        {
+      "name": "Footer Links2",
+      "type": "footer-links2",
+      "settings": [
+        {
+          "type":"link_list",
+          "id": "linklist2",
+          "label": "Footer Menu"
+        }
+      ]
+    },
+        {
+      "name": "Footer Links3",
+      "type": "footer-links3",
+      "settings": [
+        {
+          "type":"link_list",
+          "id": "linklist3",
+          "label": "Footer Menu"
+        }
+      ]
+    },
+        {
+      "name": "Insert Social Links",
+      "type": "sociallinks",
+      "settings": [
+        {
+          "type":"text",
+          "id": "svglink1",
+          "label": "Upload SVG Link1"
+        },
+          {
+          "type":"text",
+          "id": "svgtext1",
+          "label": "Upload SVG- text1"
+        },
+        {
+          "type":"text",
+          "id": "svglink2",
+          "label": "Upload SVG Link2"
+        },
+          {
+          "type":"text",
+          "id": "svgtext2",
+          "label": "Upload SVG- text2"
+        }
+        ,
+        {
+          "type":"text",
+          "id": "svglink3",
+          "label": "Upload SVG Link3"
+        },
+          {
+          "type":"text",
+          "id": "svgtext3",
+          "label": "Upload SVG- text3"
+        },
+        {
+          "type":"text",
+          "id": "svglink4",
+          "label": "Upload SVG Link4"
+        },
+          {
+          "type":"text",
+          "id": "svgtext4",
+          "label": "Upload SVG- text4"
+        },
+        {
+          "type":"text",
+          "id": "svglink5",
+          "label": "Upload SVG Link5"
+        },
+          {
+          "type":"text",
+          "id": "svgtext5",
+          "label": "Upload SVG- text5"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

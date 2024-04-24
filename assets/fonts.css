@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'Exo2';
+    src: url('https://cdn.shopify.com/s/files/1/0593/2387/5406/files/Exo2-Black.ttf?v=1709651788'),
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Exo2';
+    src: url('https://cdn.shopify.com/s/files/1/0593/2387/5406/files/Exo2-Thin.ttf?v=1709651787'),
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Exo2';
+    src: url('https://cdn.shopify.com/s/files/1/0593/2387/5406/files/Exo2-Light.ttf?v=1709651788'),
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Exo2';
+    src: url('https://cdn.shopify.com/s/files/1/0593/2387/5406/files/Exo2-SemiBold.ttf?v=1709651788'),
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Exo2';
+    src: url('https://cdn.shopify.com/s/files/1/0593/2387/5406/files/Exo2-Regular.ttf?v=1709651788'),
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Exo2';
+    src: url('https://cdn.shopify.com/s/files/1/0593/2387/5406/files/Exo2-Bold.ttf?v=1709651788'),
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Exo2';
+    src: url('https://cdn.shopify.com/s/files/1/0593/2387/5406/files/Exo2-ExtraBold.ttf?v=1709651788'),
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+body{
+  font-family: 'Exo2' !important;
+}

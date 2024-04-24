@@ -1,0 +1,83 @@
+{% comment %}
+  Custom Collection Section
+{% endcomment %}
+
+{{ 'custom-collection-section.css' | asset_url | stylesheet_tag }}
+
+{% if section.blocks.size > 0 %}
+  <div class="custom-collection">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'collection' %}
+          <div class="collection-details">
+            <h2>{{ block.settings.collection_name }}</h2>
+            <p>{{ block.settings.collection_description }}</p>
+            {% if block.settings.collection_image %}
+              <img src="{{ block.settings.collection_image | img_url: 'master' }}" alt="{{ block.settings.collection_name }}">
+            {% endif %}
+          </div>
+        {% when 'products' %}
+          <div class="product-list">
+            {% for product in block.settings.selected_products %}
+              <div class="product">
+                <h3>{{ product.title }}</h3>
+                <p>{{ product.price | money }}</p>
+                <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+              </div>
+            {% endfor %}
+          </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+{% endif %}
+
+
+{% schema %}
+{
+  "name": "Custom Collection",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection Details",
+      "settings": [
+        {
+          "type": "text",
+          "id": "collection_name",
+          "label": "Collection Name",
+          "default": "New Collection"
+        },
+        {
+          "type": "richtext",
+          "id": "collection_description",
+          "label": "Collection Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "collection_image",
+          "label": "Collection Image",
+          "info": "Select an image to represent the collection"
+        }
+      ]
+    },
+    {
+      "type": "products",
+      "name": "Products",
+      "settings": [
+        {
+          "type": "product",
+          "id": "selected_products",
+          "label": "Select Products",
+          "info": "Choose products to add to this collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name":"Custom Collection"
+    }
+  ]
+}
+{% endschema %}
+

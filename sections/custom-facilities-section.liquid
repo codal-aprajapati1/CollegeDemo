@@ -1,0 +1,93 @@
+{{ 'custom-facility.css' | asset_url | stylesheet_tag }}
+
+<div class="facility page-width">
+  <div class="con0">
+    <img
+      src="{{ section.settings.img10 | image_url}}"
+      alt="Facility One"
+      height="200"
+      width="200"
+    >
+    <p>{{ section.settings.tx1 }}</p>
+  </div>
+  <div class="con1">
+    <img
+      src="{{ section.settings.img11 | image_url }}"
+      alt="Facility One"
+      height="200"
+      width="200"
+    >
+    <p>{{ section.settings.tx2 }}</p>
+  </div>
+  <div class="con2">
+    <img
+      src="{{ section.settings.img12 | image_url }}"
+      alt="Facility One"
+      height="200"
+      width="200"
+    >
+    <p>{{ section.settings.tx3 }}</p>
+  </div>
+  <div class="con3">
+    <img
+      src="{{ section.settings.img13 | image_url }}"
+      alt="Facility One"
+      height="200"
+      width="200"
+    >
+    <p>{{ section.settings.tx4 }}</p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Facility Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "img10",
+      "label": "Select First Facility Image"
+    },
+    {
+      "type": "text",
+      "id": "tx1",
+      "label": "Enter First Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "img11",
+      "label": "Select Second Facility Image"
+    },
+    {
+      "type": "text",
+      "id": "tx2",
+      "label": "Enter Second Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "img12",
+      "label": "Select Third Facility Image"
+    },
+    {
+      "type": "text",
+      "id": "tx3",
+      "label": "Enter Third Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "img13",
+      "label": "Select Fourth Facility Image"
+    },
+    {
+      "type": "text",
+      "id": "tx4",
+      "label": "Enter Fourth Text"
+    }
+  ],
+  "presets":[
+    {
+      "name": "Facility Section"
+    }
+  ]
+}
+{% endschema %}
